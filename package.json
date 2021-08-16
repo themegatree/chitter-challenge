@@ -1,0 +1,34 @@
+{
+  "name": "chitter-challenge",
+  "version": "1.0.0",
+  "description": "This is my submission for the Chitter Challenge. Full instructions can be found [here](./instructions.md).",
+  "main": "app.js",
+  "dependencies": {},
+  "devDependencies": {
+    "bcryptjs": "^2.4.3",
+    "cypress": "^8.2.0",
+    "dotenv": "^10.0.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "express-session": "^1.17.2",
+    "method-override": "^3.0.0",
+    "nodemon": "^2.0.12",
+    "pg": "^8.7.1",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.6.5",
+    "sequelize-cli": "^6.2.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/themegatree/chitter-challenge.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/themegatree/chitter-challenge/issues"
+  },
+  "homepage": "https://github.com/themegatree/chitter-challenge#readme"
+}

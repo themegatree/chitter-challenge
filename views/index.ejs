@@ -1,0 +1,32 @@
+<% if (user) { %>
+  <h1 id="header"> Hello <%= user.username %></h1>
+<% } %>
+
+<% if (!user) { %>
+    <h2 id="header">Welcome to Chitter</h2>
+
+    <form action="/signin" method="post">
+      <input id="signin-username" type="text" name="username">
+      <input id="signin-password" type="password" name="password">
+      <input id="signin-submit" type="submit" value="signin">
+    </form>
+
+    <form action="/register" method="get">
+      <input id="register" type="submit" value="Register">
+  </form>
+<% } %>
+
+<% chitters.map((chitter,index) => { %>
+  <p>---</p>
+  <p id="chitter-<%=index%>">
+    Shiv @ time: <br>
+    <%= chitter.message %>
+  </p>
+<% }) %>
+<p>---</p>
+<% if (user) { %>
+    <form action="/new-post" method="post">
+        <input id="new-post-text" type="text" placeholder="What's happening?" name="post">
+        <input id="new-post-submit" type="submit" value="Post">
+    </form>
+  <% } %>
