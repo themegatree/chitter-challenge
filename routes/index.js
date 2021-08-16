@@ -10,7 +10,6 @@ router.get("/", async (req,res) => {
 
     if (req.session.userId !== undefined) {
         const user = await User.findOne({where: {id: req.session.userId}})
-        console.log(user.username)
         res.render("index.ejs", {
             user:user,
             chitters:chitters

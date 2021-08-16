@@ -1,5 +1,14 @@
 <% if (user) { %>
   <h1 id="header"> Hello <%= user.username %></h1>
+
+  <form action="/signout" method="post">
+      <input id="signout" type="submit" value="signout">
+  </form>
+
+  <form action="/new-post" method="post">
+    <input id="new-post-text" type="text" placeholder="What's happening?" name="post">
+    <input id="new-post-submit" type="submit" value="Post">
+</form>
 <% } %>
 
 <% if (!user) { %>
@@ -15,18 +24,13 @@
       <input id="register" type="submit" value="Register">
   </form>
 <% } %>
-
-<% chitters.map((chitter,index) => { %>
+<div id="chitter">
+  <% chitters.map((chitter,index) => { %>
+    <p>---</p>
+    <p id="chitter-<%=index%>">
+      <%=chitter.username%> @ <%=chitter.createdAt%>: <br>
+      <%= chitter.message %>
+    </p>
+  <% }) %>
   <p>---</p>
-  <p id="chitter-<%=index%>">
-    Shiv @ time: <br>
-    <%= chitter.message %>
-  </p>
-<% }) %>
-<p>---</p>
-<% if (user) { %>
-    <form action="/new-post" method="post">
-        <input id="new-post-text" type="text" placeholder="What's happening?" name="post">
-        <input id="new-post-submit" type="submit" value="Post">
-    </form>
-  <% } %>
+</div>

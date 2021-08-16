@@ -24,6 +24,9 @@ app.use("/register", registerRouter);
 const signinRouter = require("./routes/signin.js");
 app.use("/signin", signinRouter)
 
+const signoutRouter = require("./routes/signout.js");
+app.use("/signout", signoutRouter)
+
 const postRouter = require("./routes/new-post.js");
 app.use("/new-post", postRouter)
 

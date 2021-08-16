@@ -10,7 +10,7 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      this.Posts = this.hasMany(models.Post, { onDelete: 'cascade' })
+      // define association here
     }
   };
   User.init({
