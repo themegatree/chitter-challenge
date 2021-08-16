@@ -4,10 +4,18 @@ This is my submission for the Chitter Challenge. Full instructions can be found 
 
 ## Dependancies
 
-sequelize
-sequelize-cli
-nodemon
-express
+This project makes use of a lot of dependancies:
+- `bcryptjs`: to encrypt passwords
+- `cypress`: for test code
+- `dotenv`: to handle enviromental variables
+- `ejs`: to display HTML
+- `express`: to handle requests
+- `express-session`: to handle sessions
+- `nodemon`: to render webpage
+- `sequelize`: to edit databases
+- `sequelize-cli`: to create databases
+
+You will also need to install PSQL before downlaoding this project.
 
 ---
 
@@ -27,6 +35,12 @@ Then to install dependencies:
 $ npm install
 ```
 
+Then create database and tables with:
+```bash
+$ npx sequelize-cli db:create
+$ npx sequelize-cli db:migrate
+```
+
 To view the application use:
 ```bash
 node app.js
@@ -34,7 +48,7 @@ node app.js
 
 or use: 
 ```bash
-npx nodemon app.js
+$ npx nodemon app.js
 ```
 
 Then navigate to the address displayed in the command terminal (by default set to `http://localhost:3000`).
@@ -43,21 +57,31 @@ Then navigate to the address displayed in the command terminal (by default set t
 
 ## Running the Tests
 
+To run tests use 
+```bash
+$ npx nodemon app.js
+```
+to open the project then run:
+```bash
+npx cypress open
+```
+in a new terminal to view all the tests.
+
 ---
 
 ## Accepance Criteria
 
----
-
-## Extended Criteria
+Passing tests for the acceptance criteria can be found in [`feature-test.spec.js](./cypress/integration/feature-test.spec.js).
 
 ---
+
+<!-- ## Extended Criteria
+
+--- -->
 
 ## Appoach
 
----
-
-## Domain Model 
+I wrote a process model and domain model (see below). I then converted the user stories into feature tests. Then I wrote source code so that the tests pass.
 
 ---
 
@@ -90,7 +114,7 @@ Client | | Browser | | Server
 ### User
 Responsibilities | Collaborators
 --- | ---
-id | 
+id | Posts
 Username | 
 Password | 
 
@@ -100,5 +124,6 @@ Password |
 Responsibilities | Collaborators
 --- | ---
 Message | Users
+UserId | 
 Username | 
 Timestamp |
